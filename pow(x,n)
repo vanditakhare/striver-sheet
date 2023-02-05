@@ -1,0 +1,22 @@
+class Solution {
+public:
+double mm(double x,long n)
+{
+     double ans=1.0;
+        if(n==0)return 1.0;
+        if(n==1)return x;
+        if(n<0)
+        {
+            return mm(1/x,-n);
+        }
+       ans=mm(x*x,n/2);
+       if(n%2)ans*=x;
+        return ans;
+
+}
+    double myPow(double x, int n) {
+        
+        return mm(x,n);
+    }
+
+};
